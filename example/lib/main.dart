@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
 import 'package:disable_battery_optimization/disable_battery_optimization.dart';
+import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
@@ -28,32 +28,39 @@ class _MyAppState extends State<MyApp> {
                   child: Text("Is Auto Start Enabled"),
                   onPressed: () async {
                     bool isAutoStartEnabled =
-                        await DisableBatteryOptimization.isAutoStartEnabled ?? false;
-                    print(
+                        await DisableBatteryOptimization.isAutoStartEnabled ??
+                            false;
+                    debugPrint(
                         "Auto start is ${isAutoStartEnabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Is Battery optimization disabled"),
                   onPressed: () async {
                     bool isBatteryOptimizationDisabled =
-                        await DisableBatteryOptimization.isBatteryOptimizationDisabled ?? false;
-                    print(
+                        await DisableBatteryOptimization
+                                .isBatteryOptimizationDisabled ??
+                            false;
+                    debugPrint(
                         "Battery optimization is ${!isBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Is Manufacturer Battery optimization disabled"),
                   onPressed: () async {
                     bool isManBatteryOptimizationDisabled =
-                        await DisableBatteryOptimization.isManufacturerBatteryOptimizationDisabled ?? false;
-                    print(
+                        await DisableBatteryOptimization
+                                .isManufacturerBatteryOptimizationDisabled ??
+                            false;
+                    debugPrint(
                         "Manufacturer Battery optimization is ${!isManBatteryOptimizationDisabled ? "Enabled" : "Disabled"}");
                   }),
               MaterialButton(
                   child: Text("Are All Battery optimizations disabled"),
                   onPressed: () async {
                     bool isAllBatteryOptimizationDisabled =
-                        await DisableBatteryOptimization.isAllBatteryOptimizationDisabled ?? false;
-                    print(
+                        await DisableBatteryOptimization
+                                .isAllBatteryOptimizationDisabled ??
+                            false;
+                    debugPrint(
                         "All Battery optimizations are disabled ${isAllBatteryOptimizationDisabled ? "True" : "False"}");
                   }),
               MaterialButton(
@@ -68,7 +75,8 @@ class _MyAppState extends State<MyApp> {
                   onPressed: () async {
                     DisableBatteryOptimization
                         .showDisableBatteryOptimizationSettings();
-                    await DisableBatteryOptimization.showDisableBatteryOptimizationSettings();
+                    await DisableBatteryOptimization
+                        .showDisableBatteryOptimizationSettings();
                   }),
               MaterialButton(
                   child: Text("Disable Manufacturer Battery Optimizations"),
@@ -81,11 +89,12 @@ class _MyAppState extends State<MyApp> {
               MaterialButton(
                   child: Text("Disable all Optimizations"),
                   onPressed: () async {
-                    await DisableBatteryOptimization.showDisableAllOptimizationsSettings(
-                        "Enable Auto Start",
-                        "Follow the steps and enable the auto start of this app",
-                        "Your device has additional battery optimization",
-                        "Follow the steps and disable the optimizations to allow smooth functioning of this app");
+                    await DisableBatteryOptimization
+                        .showDisableAllOptimizationsSettings(
+                            "Enable Auto Start",
+                            "Follow the steps and enable the auto start of this app",
+                            "Your device has additional battery optimization",
+                            "Follow the steps and disable the optimizations to allow smooth functioning of this app");
                   })
             ],
           ),
